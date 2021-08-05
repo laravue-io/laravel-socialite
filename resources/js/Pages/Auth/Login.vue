@@ -13,18 +13,6 @@
         </div>
 
         <div>
-            <jet-button @click="loginWithGoogle" class="w-full my-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                <span class="mx-auto"> Sign in with Google </span>
-            </jet-button>
-        </div>
-
-        <div>
-            <jet-button @click="loginWithLinkedin" class="w-full my-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                <span class="mx-auto"> Sign in with Linkedin </span>
-            </jet-button>
-        </div>
-
-        <div>
             <jet-button @click="loginWithFacebook" class="w-full my-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                 <span class="mx-auto"> Sign in with Facebook </span>
             </jet-button>
@@ -109,14 +97,6 @@
                     .post(this.route('login'), {
                         onFinish: () => this.form.reset('password'),
                     })
-            },
-
-            loginWithGoogle() {
-                window.location.href = '/auth/google/redirect'
-            },
-
-            loginWithLinkedin() {
-                window.location.href = '/auth/linkedin/redirect'
             },
 
             loginWithFacebook() {
