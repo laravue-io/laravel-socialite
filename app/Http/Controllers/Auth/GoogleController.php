@@ -14,20 +14,20 @@ use Laravel\Socialite\Facades\Socialite;
 class GoogleController extends Controller
 {
 
-    CONST GOOGLE_TYPE = 'google';
+    CONST DRIVER_TYPE = 'google';
 
     public function handleGoogleRedirect()
     {
-        return Socialite::driver(static::GOOGLE_TYPE)->redirect();
+        return Socialite::driver(static::DRIVER_TYPE)->redirect();
     }
 
     public function handleGoogleCallback()
     {
         try {
             
-            $user = Socialite::driver(static::GOOGLE_TYPE)->user();
+            $user = Socialite::driver(static::DRIVER_TYPE)->user();
 
-            $userExisted = User::where('oauth_id', $user->id)->where('oauth_type', static::GOOGLE_TYPE)->first();
+            $userExisted = User::where('oauth_id', $user->id)->where('oauth_type', static::DRIVER_TYPE)->first();
 
             if( $userExisted ) {
                 
@@ -41,7 +41,7 @@ class GoogleController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'oauth_id' => $user->id,
-                    'oauth_type' => static::GOOGLE_TYPE,
+                    'oauth_type' => static::DRIVER_TYPE,
                     'password' => Hash::make($user->id)
                 ]);
 
