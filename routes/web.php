@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\Auth\GoogleController;
-use App\Http\Controllers\Auth\LinkedinController;
-use App\Http\Controllers\Auth\FacebookController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
