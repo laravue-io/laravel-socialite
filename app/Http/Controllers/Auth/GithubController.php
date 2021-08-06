@@ -11,17 +11,16 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Jetstream\Events\AddingTeam;
 use Laravel\Socialite\Facades\Socialite;
 
-class FacebookController extends Controller
+class GithubController extends Controller
 {
-
-    CONST DRIVER_TYPE = 'facebook';
-
-    public function handleFacebookRedirect()
+    CONST DRIVER_TYPE = 'github';
+    
+    public function handleGithubRedirect()
     {
         return Socialite::driver(static::DRIVER_TYPE)->redirect();
     }
 
-    public function handleFacebookCallback()
+    public function handleGithubCallback()
     {
         try {
             
@@ -53,7 +52,7 @@ class FacebookController extends Controller
                 ]));
 
                 $newUser->update([
-                    'current_team_id' => $newUser->id
+                    'current_team_id' => $team->id
                 ]);
 
                 Auth::login($newUser);
