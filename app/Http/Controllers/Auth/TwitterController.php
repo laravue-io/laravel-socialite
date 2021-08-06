@@ -11,16 +11,17 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Jetstream\Events\AddingTeam;
 use Laravel\Socialite\Facades\Socialite;
 
-class GithubController extends Controller
+
+class TwitterController extends Controller
 {
-    CONST DRIVER_TYPE = 'github';
+    CONST DRIVER_TYPE = 'twitter';
     
-    public function handleGithubRedirect()
+    public function handleTwitterRedirect()
     {
         return Socialite::driver(static::DRIVER_TYPE)->redirect();
     }
 
-    public function handleGithubCallback()
+    public function handleTwitterCallback()
     {
         try {
             

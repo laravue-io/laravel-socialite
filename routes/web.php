@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\GoogleController;
-use App\Http\Controllers\Auth\LinkedinController;
-use App\Http\Controllers\Auth\FacebookController;
-use App\Http\Controllers\Auth\GithubController;
+use App\Http\Controllers\Auth\TwitterController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,6 +29,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-/** Gihtub OAuth routes */
-Route::get('/auth/github/redirect', [GithubController::class, 'handleGithubRedirect']);
-Route::get('/auth/github/callback', [GithubController::class, 'handleGithubCallback']);
+/** Twitter OAuth routes */
+Route::get('/auth/twitter/redirect', [TwitterController::class, 'handleTwitterRedirect']);
+Route::get('/auth/twitter/callback', [TwitterController::class, 'handleTwitterCallback']);

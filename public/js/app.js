@@ -22816,7 +22816,7 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "mx-auto"
-}, " Sign in with Github ", -1
+}, " Sign in with Twitter ", -1
 /* HOISTED */
 );
 
@@ -22876,7 +22876,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* TEXT */
       )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
         onClick: _cache[1] || (_cache[1] = function ($event) {
-          return $options.loginWithDriver('github');
+          return $options.loginWithDriver('twitter');
         }),
         "class": ["w-full my-3", {
           'opacity-25': $data.form.processing

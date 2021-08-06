@@ -13,8 +13,8 @@
         </div>
 
         <div>
-            <jet-button @click="loginWithDriver('github')" class="w-full my-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                <span class="mx-auto"> Sign in with Github </span>
+            <jet-button @click="loginWithDriver('twitter')" class="w-full my-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <span class="mx-auto"> Sign in with Twitter </span>
             </jet-button>
         </div>
 
